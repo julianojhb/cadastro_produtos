@@ -1,0 +1,10 @@
+
+Instalação
+
+- Baixe ou Clone o repositório;
+- Coloque as pastas app/ e public/ em seu webroot;
+- Abra o .htaccess em seu webroot e altere o RewriteBase / se necessário;
+- Abra o .htaccess em public/ e altere o RewriteBase / se necessário;
+- Encontre o config.php em app/config/ e configure-o como desejado;
+- Acesse a raíz do projeto e verifique se está tudo funcionando;
+- Crie um Bando de Dados MySQL chamado alpha e faça a Restauração da base de dados usando o arquivo da pasta "base/base.sql";
