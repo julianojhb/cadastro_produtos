@@ -19,4 +19,4 @@ Instalação
     b. [root]public/.htaccess           Alterar [RewriteBase /alpha/] para a pasta em que o projeto se encontra. Ex.: http://localhost/alpha
                                         Deixar [RewriteBase /] caso esteja na raíz do servidor. Ex.: http://localhost
 
-    c. [root]app/config/config.php      Alterar [define('URL_ROOT', 'http://localhost/alpha')] para a raíd do seu projeto.
+    c. [root]app/config/config.php      Alterar [define('URL_ROOT', 'http://localhost/alpha')] para a raíz do seu projeto.
