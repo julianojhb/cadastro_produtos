@@ -8,9 +8,9 @@ require_once ('../app/library/Funcoes.php');
 require_once ('../app/library/STable.php');
 
 //Autoload Controllers
-function __autoload($classname) {
-  require_once '../app/controllers/'.$classname.'.php';
-}
+spl_autoload_register(function($classname) {
+    require_once '../app/controllers/' . $classname . '.php';
+});
 
 $url = '/';
 if (isset($_GET['url'])) {

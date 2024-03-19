@@ -58,9 +58,9 @@ class PostController extends Controller {
           // VERIFICANDO SE O PRODUTO JÁ EXISTE
 
           if((int)$edicao == 1){
-              $produtos = $funcoes->converterUtf8($database->query("SELECT p.codigo, p.descricao FROM produtos p WHERE p.descricao = '" . utf8_decode($descricao) . "' AND codigo <> " . $_SESSION['codigo_produto_editado']));
+              $produtos = $funcoes->converterUtf8($database->query("SELECT p.codigo, p.descricao FROM produtos p WHERE p.descricao = '" . mb_convert_encoding($descricao, 'ISO-8859-1', 'UTF-8') . "' AND codigo <> " . $_SESSION['codigo_produto_editado']));
           } else {
-              $produtos = $funcoes->converterUtf8($database->query("SELECT p.codigo, p.descricao FROM produtos p WHERE p.descricao = '" . utf8_decode($descricao) . "'"));
+              $produtos = $funcoes->converterUtf8($database->query("SELECT p.codigo, p.descricao FROM produtos p WHERE p.descricao = '" . mb_convert_encoding($descricao, 'ISO-8859-1', 'UTF-8') . "'"));
           }
 
           if(count($produtos) > 0){
@@ -81,12 +81,12 @@ class PostController extends Controller {
 
               // SALVANDO EDIÇÃO DO PRODUTO
               $codigo = $_SESSION['codigo_produto_editado'];
-              $update = $database->query("UPDATE produtos SET descricao = '".utf8_decode($descricao)."' , preco_unitario = '".$preco_unitario."' , categoria = '".$categoria."' WHERE codigo = '".$codigo."'; ");
+              $update = $database->query("UPDATE produtos SET descricao = '" . mb_convert_encoding($descricao, 'ISO-8859-1', 'UTF-8') ."' , preco_unitario = '".$preco_unitario."' , categoria = '".$categoria."' WHERE codigo = '".$codigo."'; ");
 
           } else {
 
               // SE CHEGAR ATÉ AQUI, PRECISA CADASTRAR O PRODUTO
-              $novo_produto = $database->query("INSERT INTO produtos (codigo, descricao, preco_unitario, categoria) VALUES (0, '" . utf8_decode($descricao) ."', ".$preco_unitario.", ".$categoria.")");
+              $novo_produto = $database->query("INSERT INTO produtos (codigo, descricao, preco_unitario, categoria) VALUES (0, '" . mb_convert_encoding($descricao, 'ISO-8859-1', 'UTF-8') ."', ".$preco_unitario.", ".$categoria.")");
 
           }
       }

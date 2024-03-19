@@ -1,10 +1,22 @@
 
+UTILIZAR PHP VERSÃO 8.3.4
+
 Instalação
 
-- Baixe ou Clone o repositório;
-- Coloque as pastas app/ e public/ em seu webroot;
-- Abra o .htaccess em seu webroot e altere o RewriteBase / se necessário;
-- Abra o .htaccess em public/ e altere o RewriteBase / se necessário;
-- Encontre o config.php em app/config/ e configure-o como desejado;
-- Acesse a raíz do projeto e verifique se está tudo funcionando;
-- Crie um Bando de Dados MySQL chamado alpha e faça a Restauração da base de dados usando o arquivo da pasta "base/base.sql";
+1 - Baixe ou Clone o repositório;
+2 - Coloque as pastas app/ e public/ em seu webroot;
+3 - Abra o .htaccess em seu webroot e altere o RewriteBase / se necessário;
+4 - Abra o .htaccess em public/ e altere o RewriteBase / se necessário;
+5 - Encontre o config.php em app/config/ e configure-o como desejado;
+6 - Acesse a raíz do projeto e verifique se está tudo funcionando;
+7 - Crie um Banco de Dados MySQL chamado alpha e faça a Restauração da base de dados usando o arquivo da pasta "base/base.sql";
+8 - Realizar as alterações nos arquivos abaixo:
+
+    ARQUIVO                             ALTERAÇÃO
+    a. [root].htaccess                  Alterar [RewriteBase /alpha/] para a pasta em que o projeto se encontra. Ex.: http://localhost/alpha
+                                        Deixar [RewriteBase /] caso esteja na raíz do servidor. Ex.: http://localhost
+
+    b. [root]public/.htaccess           Alterar [RewriteBase /alpha/] para a pasta em que o projeto se encontra. Ex.: http://localhost/alpha
+                                        Deixar [RewriteBase /] caso esteja na raíz do servidor. Ex.: http://localhost
+
+    c. [root]app/config/config.php      Alterar [define('URL_ROOT', 'http://localhost/alpha')] para a raíd do seu projeto.

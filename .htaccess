@@ -1,4 +1,4 @@
 RewriteEngine on
-RewriteBase /alpha03/
+RewriteBase /alpha/
 RewriteRule ^$ public/ [L]
 RewriteRule (.*) public/$1 [L]

@@ -1,6 +1,6 @@
 <?php
 
-define('URL_ROOT', 'http://localhost/alpha03');
+define('URL_ROOT', 'http://localhost/alpha');
 define('SITE_NAME', 'CADASTRO DE PRODUTOS');
 
 // DB Config
